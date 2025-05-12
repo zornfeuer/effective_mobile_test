@@ -14,13 +14,20 @@ https://test.com/monitoring/test/api
 5. Если сервер мониторинга не доступен, так же писать в лог.
 
 ## Запуск сервиса
-    Для запуска скрипта, требуется разместить его в `/usr/local/bin/monitoring_test.sh`и сделать исполняемым командой `sudo chmod +x /usr/local/bin/monitoring_test.sh`
-    Далее создаем лог-файл и назначаем права:
+
+Размещаем скрипт по нужному пути и делаем исполняемым командой:    
+
+```sudo chmod +x /usr/local/bin/monitoring_test.sh```
+
+Далее создаем лог-файл и назначаем права:
+
 ```
 sudo touch /var/log/monitoring.log
 sudo chmod 644 /var/log/monitoring.log
 ```
-    После этого активируем таймер:
+
+После этого активируем таймер:
+
 ```
 sudo systemctl enable monitoring-test.timer
 sudo systemctl start monitoring-test.timer
