@@ -17,7 +17,9 @@ https://test.com/monitoring/test/api
 
 Размещаем скрипт по нужному пути и делаем исполняемым командой:    
 
-```sudo chmod +x /usr/local/bin/monitoring_test.sh```
+```
+sudo chmod +x /usr/local/bin/monitoring_test.sh
+```
 
 Далее создаем лог-файл и назначаем права:
 
