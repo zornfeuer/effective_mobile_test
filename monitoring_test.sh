@@ -12,7 +12,7 @@ previous_pid=""
 [[ -f "$PID_FILE" ]] && previous_pid=$(cat "$PID_FILE")
 
 if [[ "$previous_pid" != "$pid" && "$pid" != "" ]]; then
-  echo "$(date '+%Y-%m-%d %H:%M:%S') - Process $PROCESS_NAME restarted. New PID: $pid" >> "$LOG_FILE"
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] - Process $PROCESS_NAME restarted. New PID: $pid" >> "$LOG_FILE"
 fi
 
 echo "$pid" > "$PID_FILE"
@@ -20,5 +20,5 @@ echo "$pid" > "$PID_FILE"
 response=$(curl -s -o /dev/null -w "%{http_code}" "$MONITORING_URL")
 
 if [[ "$response" != "200" ]]; then
-  echo "$(date '+%Y-%m-%d %H:%M:%S') - Monitoring server unavailable. HTTP code: $response" >> "$LOG_FILE"
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] - Monitoring server unavailable. HTTP code: $response" >> "$LOG_FILE"
 fi
